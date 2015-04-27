@@ -19,7 +19,6 @@ progressBar.set_value(' ' * progressItem)
 # finally call the addProgressbar method and show method
 progressDialog.addProgressbar(progressbar)
 progressDialog.show()
-
 ```
 > You can also directly execute the **progressBar.py** preview the effect
 
@@ -42,3 +41,6 @@ class DownloadProgressBar(BaseProgressBar):
         }"""
         self.progressbar.setStyleSheet(style)
 ```
+
+#Screenshots
+<img src="https://raw.github.com/jacklam718/PyQt-ProgressBar/master/screenshots/progressbars.png" alt="progressbars">
