@@ -12,9 +12,9 @@ progressDialog = ProgressDialog()
 # create a DownloadProgressBar instance, you can pass a argument as the progress bar title
 progressBar = DownloadProgressBar(text="title")
 # set max value
-progressBar.set_max(100)
+progressBar.setMax(100)
 # set current value
-progressBar.set_value(' ' * progressItem)
+progressBar.setValue(' ' * progressItem)
 
 # finally call the addProgressbar method and show method
 progressDialog.addProgressbar(progressbar)

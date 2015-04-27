@@ -71,14 +71,14 @@ if __name__ == "__main__":
 
     for progressItem in progressItems:
         progressBar = DownloadProgressBar(text="download")
-        progressBar.set_max(100)
-        progressBar.set_value(' ' * progressItem)
+        progressBar.setMax(100)
+        progressBar.setValue(' ' * progressItem)
         progressDialog.addProgressbar(progressBar)
 
     for progressItem in progressItems:
         progressBar = UploadProgressBar(text="Upload")
-        progressBar.set_max(100)
-        progressBar.set_value(' ' * progressItem)
+        progressBar.setMax(100)
+        progressBar.setValue(' ' * progressItem)
         progressDialog.addProgressbar(progressBar)
 
     progressDialog.show()

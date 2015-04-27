@@ -12,7 +12,7 @@ class BaseProgressBar(QtGui.QWidget):
         self.text  = text
         self.progressbar = QtGui.QProgressBar( )
         self.progressbar.setTextVisible(True)
-        self.updateProgress.connect(self.set_value)
+        self.updateProgress.connect(self.setValue)
 
         self.bottomBorder = QtGui.QWidget( )
         self.bottomBorder.setStyleSheet("""
@@ -37,9 +37,9 @@ class BaseProgressBar(QtGui.QWidget):
         self.setLayout(self.mainLayout)
         self.totalValue = 0
 
-    def set_value(self, value):
+    def setValue(self, value):
         self.totalValue += len(value)
         self.progressbar.setValue(self.totalValue)
 
-    def set_max(self, value):
+    def setMax(self, value):
         self.progressbar.setMaximum(value)
