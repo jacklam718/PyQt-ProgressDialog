@@ -1,8 +1,7 @@
 #About
 This is a PyQt Progress Bar you can easily to use this library or inherit it
 
-#Usage
-
+#Example
 ```python
 from progressBar import DownloadProgressBar, UploadProgressBar, ProgressDialog
 
