@@ -20,6 +20,11 @@ progressDialog.show()
 ```
 > You can also directly execute the **progressBar.py** preview the effect
 
+#Install
+```bash
+python or python3 setup.py install
+```
+
 #Tips
 You can easily change the progress bar style
 ```python
