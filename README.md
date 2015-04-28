@@ -14,10 +14,9 @@ progressBar = DownloadProgressBar(text="Downloading")
 # set max value
 progressBar.setMax(100)
 # set current value
-progressBar.setValue(' ' * progressItem)
-
-# finally call the addProgressbar method and show method
+progressBar.setValue(' ' * progress)
 progressDialog.addProgressbar(progressbar)
+# finally call show method
 progressDialog.show()
 ```
 > You can also directly execute the **progressBar.py** preview the effect
