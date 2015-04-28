@@ -9,8 +9,8 @@ from progressBar import DownloadProgressBar, UploadProgressBar, ProgressDialog
 # create a ProgressDialog instance
 progressDialog = ProgressDialog()
 
-# create a DownloadProgressBar instance, you can pass a argument as the progress bar title
-progressBar = DownloadProgressBar(text="title")
+# create a DownloadProgressBar instance, you can pass an argument as the progress bar title
+progressBar = DownloadProgressBar(text="Downloading")
 # set max value
 progressBar.setMax(100)
 # set current value
