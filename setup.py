@@ -4,11 +4,11 @@
 from distutils.core import setup
 
 setup(
-    name="PyQt-ProgressBar",
+    name="PyQt-ProgressDialog",
     version="0.1.0",
-    description="PyQt Progress Bar",
+    description="PyQt Progress Dialog",
     author="Jack Lam",
     author_email="jacklam718@gmail.com",
     url="https://github.com/jacklam718/PyQt-ProgressBar",
-    py_modules=["baseProgressBar", "progressBar"],
+    py_modules=["QtProgressDialog"],
 )

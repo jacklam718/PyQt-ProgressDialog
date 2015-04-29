@@ -3,9 +3,48 @@
 
 from PyQt4 import QtGui
 from PyQt4 import QtCore
-from baseProgressBar import BaseProgressBar
 
-class DownloadProgressBar(BaseProgressBar):
+class BaseProgressDialog(QtGui.QWidget):
+    updateProgress = QtCore.pyqtSignal(str)
+    def __init__(self, text='', parent=None):
+        super(BaseProgressDialog, self).__init__(parent)
+        self.setFixedHeight(50)
+        self.text  = text
+        self.progressbar = QtGui.QProgressBar( )
+        self.progressbar.setTextVisible(True)
+        self.updateProgress.connect(self.setValue)
+
+        self.bottomBorder = QtGui.QWidget( )
+        self.bottomBorder.setStyleSheet("""
+            background: palette(shadow);
+        """)
+        self.bottomBorder.setSizePolicy(QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Fixed))
+        self.bottomBorder.setMinimumHeight(1)
+
+        self.label  = QtGui.QLabel(self.text)
+        self.label.setStyleSheet("""
+            font-weight: bold;
+        """)
+        self.layout = QtGui.QVBoxLayout( )
+        self.layout.setContentsMargins(10,0,10,0)
+        self.layout.addWidget(self.label)
+        self.layout.addWidget(self.progressbar)
+
+        self.mainLayout = QtGui.QVBoxLayout( )
+        self.mainLayout.setContentsMargins(0,0,0,0)
+        self.mainLayout.addLayout(self.layout)
+        self.mainLayout.addWidget(self.bottomBorder)
+        self.setLayout(self.mainLayout)
+        self.totalValue = 0
+
+    def setValue(self, value):
+        self.totalValue += len(value)
+        self.progressbar.setValue(self.totalValue)
+
+    def setMax(self, value):
+        self.progressbar.setMaximum(value)
+
+class DownloadProgressBar(BaseProgressDialog):
     def __init__(self, text='Downloading', parent=None):
         super(self.__class__, self).__init__(text, parent)
         style ="""
@@ -22,7 +61,7 @@ class DownloadProgressBar(BaseProgressBar):
         self.progressbar.setStyleSheet(style)
 
 
-class UploadProgressBar(BaseProgressBar):
+class UploadProgressBar(BaseProgressDialog):
     def __init__(self, text='Uploading', parent=None):
         super(self.__class__, self).__init__(text, parent)
         style ="""
