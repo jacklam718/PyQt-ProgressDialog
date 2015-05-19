@@ -22,6 +22,8 @@ progressDialog.show()
 
 #Install
 ```bash
+git clone https://github.com/jacklam718/PyQt-ProgressDialog
+cd PyQt-ProgressDialog
 python or python3 setup.py install
 ```
 
